@@ -1,5 +1,0 @@
-#!/bin/bash
-
-echo "Setting up symlinks..."
-dircombine '!(bin)' . `pwd`/labs-common
-echo "Done!"
