@@ -47,11 +47,13 @@ p {
 
 .navbar .brand {
   font-size: 18px; }
+.navbar a.active.brand {
+  color: white; }
 
 .hero-unit {
   background: none; }
   .hero-unit .tagline {
     padding-bottom: 10px; }
-  .hero-unit .giant-beaker {
+  .hero-unit .giant {
     float: left;
     padding-right: 30px; }
