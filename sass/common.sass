@@ -3,8 +3,6 @@ h1
 
 body
   font-family: 'Nobile', Helvetica, Arial, sans-serif
-  padding-top: 60px
-  padding-bottom: 40px
 
 p
   font-family: 'Nobile', Helvetica, Arial, sans-serif
@@ -14,6 +12,14 @@ p
 code
   font-size: 1.0em
   color: #1b1b1b
+
+.content
+  margin:
+    left: auto
+    right: auto
+  max-width: 1050px
+  padding-top: 60px
+  padding-bottom: 40px
 
 .subdued
   color: #555555
@@ -104,3 +110,8 @@ footer
   list-style-type: none
   background-color: #f7f7f9
   border: 1px solid #e1e1e8
+
+// Fix for https://github.com/twbs/bootstrap/issues/7968
+.dropdown-backdrop 
+  display: none
+
