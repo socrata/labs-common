@@ -63,11 +63,8 @@ code {
   font-size: 18px; }
 .navbar a.active.brand {
   color: white; }
-.navbar .dropdown .hiab > .hiab a,
-.navbar .dropdown .labs .labs a,
-.navbar .dropdown .dev .dev a,
-.navbar .dropdown .blog .blog a {
-  color: white; }
+.navbar .navbar-inner {
+  background-color: #222222; }
 
 .hero-unit {
   background: none; }
