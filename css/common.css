@@ -4,10 +4,10 @@ h1 {
 body {
   font-family: "Nobile", Helvetica, Arial, sans-serif; }
 
-p {
+p, li {
   font-family: "Nobile", Helvetica, Arial, sans-serif;
   font-size: 1.2em;
-  line-height: 1.6em; }
+  line-height: 1.7em; }
 
 code {
   font-size: 1em;
@@ -65,6 +65,9 @@ code {
   color: white; }
 .navbar .navbar-inner {
   background-color: #222222; }
+.navbar .nav > li {
+  font-size: 14px;
+  line-height: 20px; }
 
 .hero-unit {
   background: none; }
