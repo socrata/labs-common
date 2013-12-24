@@ -99,11 +99,65 @@ footer {
   border-radius: 0.2em;
   -moz-border-radius: 0.2em;
   webkit-border-radius: 0.2em;
-  padding: 10px;
-  line-height: 1em;
+  padding: 15px;
   list-style-type: none;
   background-color: #f7f7f9;
-  border: 1px solid #e1e1e8; }
+  border: 1px solid #e1e1e8;
+  margin: 15px;
+  position: relative;
+  padding-left: 2.8em; }
+  .more-info:before {
+    position: absolute;
+    font-family: FontAwesome;
+    top: 0.5em;
+    left: 0.5em;
+    content: "\F05A";
+    font-size: 1.6em;
+    color: #b9b9bf; }
 
 .dropdown-backdrop {
+  display: none; }
+
+ul.debug {
+  list-style: none;
+  min-height: 20px;
+  padding: 0.5em;
+  margin-bottom: 20px;
+  background-color: whitesmoke;
+  border: 1px solid #e3e3e3;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05); }
+  ul.debug li {
+    display: inline-block;
+    min-width: 5em;
+    padding-right: 2em; }
+    ul.debug li .placeholder {
+      color: #8a8a8a; }
+    ul.debug li .draft {
+      color: #ff4756; }
+    ul.debug li .alpha {
+      color: #ff7e47; }
+    ul.debug li .beta {
+      color: #ff7e47; }
+    ul.debug li .final {
+      color: #3ec821; }
+
+.splash {
+  min-height: 20px;
+  padding: 0.5em;
+  margin-bottom: 20px;
+  background-color: whitesmoke;
+  border: 1px solid #e3e3e3;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05); }
+
+.homepage .splash {
   display: none; }
