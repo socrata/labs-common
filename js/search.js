@@ -44,7 +44,7 @@ $(function() {
   var final_results = [];
 
   // and go...
-  $.getJSON('/search.json', function(data,status) {
+  $.getJSON('search.json', function(data,status) {
     var s_words = $.trim(term).toLowerCase().split(" ");
     var results = {};
     
