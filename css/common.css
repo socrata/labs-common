@@ -91,27 +91,18 @@ footer {
 .horiz-columns {
   padding-bottom: 1em; }
 
-.more-info {
-  font-size: 1.2em;
+ul.more-info {
   line-height: 1.6em;
   border-radius: 0.2em;
   -moz-border-radius: 0.2em;
   webkit-border-radius: 0.2em;
   padding: 15px;
-  list-style-type: none;
+  list-style-type: disc;
   background-color: #f7f7f9;
   border: 1px solid #e1e1e8;
   margin: 15px;
   position: relative;
   padding-left: 2.8em; }
-  .more-info:before {
-    position: absolute;
-    font-family: FontAwesome;
-    top: 0.5em;
-    left: 0.5em;
-    content: "\F05A";
-    font-size: 1.6em;
-    color: #b9b9bf; }
 
 .dropdown-backdrop {
   display: none; }
