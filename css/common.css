@@ -13,14 +13,15 @@ code {
   font-size: 1em;
   color: #1b1b1b; }
 
+.navbar .search {
+  padding-right: 1em; }
+
 .sidebar-nav li > a {
   padding: 0; }
 .sidebar-nav .nav-header {
   padding-left: 0;
   padding-top: 0.5em;
   font-size: 1.2em; }
-  .sidebar-nav .nav-header .search {
-    padding-right: 1em; }
 
 .content {
   margin-left: auto;
