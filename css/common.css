@@ -19,6 +19,8 @@ code {
   padding-left: 0;
   padding-top: 0.5em;
   font-size: 1.2em; }
+  .sidebar-nav .nav-header .search {
+    padding-right: 1em; }
 
 .content {
   margin-left: auto;
