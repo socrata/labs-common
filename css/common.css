@@ -97,6 +97,19 @@ footer {
 ul.well {
   padding-left: 2.8em; }
 
+.dropdown-header {
+  font-size: 14px;
+  padding: 10px 20px 0; }
+
+.dropdown-header:first-child {
+  padding-top: 0; }
+
+.dropdown-menu {
+  padding: 15px 0; }
+
+.dropdown-menu > li > a {
+  line-height: 1.2em; }
+
 .dropdown-backdrop {
   display: none; }
 
