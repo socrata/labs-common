@@ -1,47 +1,53 @@
-var tumblr_api_key = "6riKIeh1riQjxAbnkngT3nFj4IzcNlCu3XcIrXp4o3CpdvqjTs";
+var status_io_page_id = "532b466499798da4200000cc";
 
 $.ajax({
-  dataType: "jsonp",
-  url: "http://api.tumblr.com/v2/blog/status.socrata.com/posts/text?api_key=" + tumblr_api_key + "&limit=1",
-}).done(function(results) {
-  var last_post = results.response.posts[0];
-  if(last_post.title != "All Systems Normal") {
-    // Something has gone wrong! Attempt to parse it out of the body
-    var matches = last_post.body.match(/([A-Z]+)!/);
-    if(matches) {
-      var level = "default";
-      var message = "All systems go!";
+  url: "https://status.io/1.0/status/" + status_io_page_id,
+}).done(function(response) {
+  var max_status = 100;
+  $.each(response.result.status, function(idx, stat) {
+    $.each(stat.containers, function(idx, substat) {
+      max_status = Math.max(max_status, substat.status_code);
+    });
+  });
 
-      switch(matches[1]) {
-        case "GREEN":
-          console.log("All systems running normally");
-          return;
-        case "MAINTENANCE":
-          level = "info";
-          message = "Maintenence Mode";
-          break;
-        case "YELLOW":
-          level = "warning";
-          message = "Intermittent Issues";
-          break;
-        case "RED":
-          level = "danger";
-          message = "API Outage";
-          break;
-      }
+  // Yes, I could pull the status message out of the API, but this allows
+  // me to control it when people complain
+  var message = "All systems go!";
+  var level = "default";
+  switch(max_status) {
+    case 100:
+      console.log("All systems running normally");
+      return;
 
-      $("#socrata-status button")
-        .addClass("btn-" + level)
-        .attr("title", last_post.title)
-        .attr("data-content", 'For more information see <a href="http://status.socrata.com">status.socrata.com</a>')
-        .text(message)
-        .popover();
-      $("#socrata-status")
-        .show();
-    } else {
-      console.log("Could not parse an alert level out of body");
-    }
+    case 300:
+      message = "Degraded Performance";
+      level = "warning";
+      break;
+
+    case 400:
+      message = "Partial Service Disruption";
+      level = "warning";
+      break;
+
+    case 500:
+      message = "Service Disruption";
+      level = "danger";
+      break;
+
+    case 600:
+      message = "Security Event";
+      level = "info";
+      break;
   }
+
+  $("#socrata-status button")
+    .addClass("btn-" + level)
+    .attr("title", message)
+    .attr("data-content", 'For more information see <a href="http://status.socrata.com">status.socrata.com</a>')
+    .text(message)
+    .popover();
+  $("#socrata-status")
+    .show();
 }).fail(function(results) {
   console.log("Error retrieving current site status: " + results);
 });
