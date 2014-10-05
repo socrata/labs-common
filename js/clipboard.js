@@ -1,6 +1,4 @@
-
-// Add a clipboard button to everything that's a <pre>
-$.each($("pre"), function(idx, pre) {
+var clipbutton = function(idx, pre) {
   // Generate and set a uniq id to each pre
   var uniq_id = Math.random().toString(36).substr(2, 9);
   $(pre).attr("id", 'clipboard_' + uniq_id);
@@ -21,4 +19,7 @@ $.each($("pre"), function(idx, pre) {
       $("i", event.target).removeClass("fa-spinner fa-spin").addClass("fa-clipboard");
     }, 500);
   });
-});
+}
+
+// Add a clipboard button to everything that's a <pre>
+$.each($("pre"), clipbutton);

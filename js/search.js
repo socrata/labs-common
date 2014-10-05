@@ -1,3 +1,5 @@
+---
+---
 /* Script adapted from https://github.com/cobbler/jekyll-dynamic-search */
 
 /*
@@ -38,13 +40,10 @@ function get_param(url, name) {
     return (RegExp(name + '=' + '(.+?)(&|$)').exec(url)||[,null])[1];
 }
 
-// Load our search results
-$(function() {
-  var term = decodeURIComponent(get_param(window.location, "q")).replace("+", " ");
-  var final_results = [];
-
+// Fetch results
+function fetch_results(term) {
   // and go...
-  $.getJSON('search.json', function(data,status) {
+  $.getJSON('{{ site.root }}/search.json', function(data,status) {
     var s_words = $.trim(term).toLowerCase().split(" ");
     var results = {};
     
@@ -125,4 +124,4 @@ $(function() {
   }).error(function() { 
     $(".search-container").append("<p class=\"error\">There was an error retrieving search.json. This shouldn't happen.</p>");
   });
-});
+}
