@@ -5,9 +5,11 @@ $.ajax({
 }).done(function(response) {
   var max_status = 100;
   $.each(response.result.status, function(idx, stat) {
-    $.each(stat.containers, function(idx, substat) {
-      max_status = Math.max(max_status, substat.status_code);
-    });
+    if(stat.name.match(/^API/)) {
+      $.each(stat.containers, function(idx, substat) {
+        max_status = Math.max(max_status, substat.status_code);
+      });
+    }
   });
 
   // Yes, I could pull the status message out of the API, but this allows
