@@ -114,7 +114,7 @@ function fetch_results(term) {
     if(keys.length > 0) {
       var output = $(".search-container").append("<ul class=\"search-results\">");
       $.each(keys, function(idx,key) {
-        output.append("<li><a href=\"" + results[key]["u"] + "\">" + results[key]["t"] + "</a></li>");
+        output.append("<li><a href=\"{{ site.root }}" + results[key]["u"] + "\">" + results[key]["t"] + "</a></li>");
       });
 
     } else {
