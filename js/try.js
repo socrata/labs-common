@@ -1,7 +1,7 @@
 // LiveDocs
 var setup_livedocs = function(div) {
   $.when(
-      $.ajax("/foundry/tryit.mst")
+      $.ajax("/common/js/tryit.mst")
   ).done(function(template) {
     div.find("a.tryit").each(function(idx, element) {
       var target = $(element).attr("href");
