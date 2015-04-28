@@ -173,3 +173,50 @@ table
     position: absolute
     right: 1em
     background-color: inherit
+
+.results
+  position: relative
+  background-color: #f9f2f4
+  height: 400px
+  overflow-x: hidden
+  overflow-y: scroll
+  width: 100%
+  margin:
+    left: auto
+    right: auto
+    bottom: 20px
+  padding:
+    top: 10px
+    left: 10px
+    right: 10px
+    bottom: 10px
+  border: 1px solid #cecece
+  border-radius: 4px
+
+  .request, .response
+    border: none
+
+  .request
+    padding:
+      top: 3px
+      left: 3px
+    .verb
+      font-weight: bold
+      color: #008080
+
+  .remove
+    position: absolute
+    top: 0
+    right: 0
+    text-decoration: none
+    color: #000
+    font-size: 0.9em
+    padding: 10px
+    background-color: whitesmoke
+    border-left: 1px solid #cecece
+    border-bottom: 1px solid #cecece
+    border-bottom-left-radius: 4px
+
+  pre
+    background-color: transparent   /* Overrides bootstrap for try-it code response */
+
