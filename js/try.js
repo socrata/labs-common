@@ -46,7 +46,9 @@ var setup_livedocs = function(div) {
           the_gear.removeClass("fa-spin");
 
           // Create a results block after the link with the output
-          tryit_block = '<div class="results"><a class="remove" href="#"><i class="fa fa-times"></i> close</a><code class="request"><span class="verb">GET</span> ' + the_href + '</code><pre class="response prettyprint">' + JSON.stringify(data, undefined, 2) + '</pre></div>';
+          tryit_block = $('<div class="results"><a class="remove" href="#"><i class="fa fa-times"></i> close</a><code class="request"><span class="verb">GET</span><span class=".url"></span></code><pre class="response prettyprint"></pre></div>');
+          tryit_block.find('.response').text(JSON.stringify(data, undefined, 2));
+          tryit_block.find('.url').text(the_href);
 
           // Hide any existing code blocks on the page
           $('.results').remove();
