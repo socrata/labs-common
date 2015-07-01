@@ -5,25 +5,25 @@
 /*
 Copyright (c) 2012 by James Cammarata <jimi@sngx.net>
 
-Permission is hereby granted, free of charge, to any person obtaining 
-a copy of this software and associated documentation files (the "Software"), 
-to deal in the Software without restriction, including without limitation 
-the rights to use, copy, modify, merge, publish, distribute, sublicense, 
-and/or sell copies of the Software, and to permit persons to whom the 
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the "Software"),
+to deal in the Software without restriction, including without limitation
+the rights to use, copy, modify, merge, publish, distribute, sublicense,
+and/or sell copies of the Software, and to permit persons to whom the
 Software is furnished to do so, subject to the following conditions:
 
-The above copyright notice and this permission notice shall be included in 
+The above copyright notice and this permission notice shall be included in
 all copies or substantial portions of the Software.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR 
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE 
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, 
-WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN 
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
-// helper function, gets the keys from a hash 
+// helper function, gets the keys from a hash
 // and dumps them into an array
 function getkeys(obj) {
     var keys = [];
@@ -42,36 +42,39 @@ function get_param(url, name) {
 
 // Fetch results
 function fetch_results(term) {
+  // Clean things up to prevent funky stuff like XSS attacks...
+  term = term.replace(/[^A-z0-9_-]+/g, ' ');
+
   // and go...
   $.getJSON('{{ site.root }}/search.json', function(data,status) {
     var s_words = $.trim(term).toLowerCase().split(" ");
     var results = {};
-    
+
     $(".search-terms").append(term);
 
     // now loop through all the words in the search JSON...
     $.each(getkeys(data["words"]), function(idx,key) {
       // for each word we're looking for
       $.each(s_words, function(idx,val) {
-        // "fuzzy" matching logic with match and regex, 
+        // "fuzzy" matching logic with match and regex,
         // but only if the key is 3 or more characters
         var s_reg = val;
         if (val.length > 2) {
           try {
             s_reg = new RegExp(val.split('').join('\\w*').replace(/\W/, ""), 'i');
-          } catch(e) { 
+          } catch(e) {
             // just use the raw string for the match below.
             // this block gets hit if some enters a search like
             // "word*"
           }
         }
-        if (key.match(s_reg)) { 
+        if (key.match(s_reg)) {
           // we have a "match", so now we take all of the indexed
           // documents for that word and save them into our results,
           // adding to the original score if this document was already
           // found through another word.
           $.each(data["words"][key],function(widx,wobj) {
-            // "u" is the ferret-based id, which is an index into 
+            // "u" is the ferret-based id, which is an index into
             // the "index" hash table in our data
             var id = wobj["u"];
             if (data["index"][id]) {
@@ -82,7 +85,7 @@ function fetch_results(term) {
                 results[id]["u"] = data["index"][id]["u"]; // the url
               }
 
-              // As stated above, add the score for this word/document 
+              // As stated above, add the score for this word/document
               // to this results total score
               //
               // TODO: adjust the score based on how fuzzy the result was?
@@ -121,7 +124,7 @@ function fetch_results(term) {
       // No matches
       $(".search-container").append("<p class=\"no-matches\">No matches found.</p>");
     }
-  }).error(function() { 
+  }).error(function() {
     $(".search-container").append("<p class=\"error\">There was an error retrieving search.json. This shouldn't happen.</p>");
   });
 }
