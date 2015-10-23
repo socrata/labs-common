@@ -7,9 +7,10 @@ define(["jquery", "purl", "mustache"], function($, purl, Mustache) {
       ).done(function(template) {
         div.find("a.tryit").each(function(idx, element) {
           var target = $(element).attr("href");
+          var display = $(element).text();
 
           // Build up our Hurl link
-          var url = purl(target);
+          var url = purl(display);
           var params = {};
           $.each(url.param(), function(k, v) {
             params[k] = [v];
@@ -27,6 +28,7 @@ define(["jquery", "purl", "mustache"], function($, purl, Mustache) {
           // Render our Mustache template
           var content = Mustache.render(template, {
             url: target,
+            display_url: display,
             hurl_url : hurl_url
           });
 
