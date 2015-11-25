@@ -1,6 +1,8 @@
+---
+---
 // Setup
 requirejs.config({
-  baseUrl: '/common/js/lib',
+  baseUrl: '{{site.root}}/common/js/lib',
   paths: {
     analytics: '//www.google-analytics.com/analytics',
     bootstrap: '//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min',
