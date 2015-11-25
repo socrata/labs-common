@@ -8,6 +8,7 @@ requirejs.config({
     bootstrap: '//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min',
     d3: '//cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min',
     featherlight: '//cdn.rawgit.com/noelboss/featherlight/1.3.4/release/featherlight.min',
+    googlemaps: '//maps.googleapis.com/maps/api/js?sensor=true',
     highcharts: '//code.highcharts.com/highcharts',
     highcharts_data: '//code.highcharts.com/modules/data',
     jquery: 'jquery.min',
@@ -42,6 +43,9 @@ requirejs.config({
     },
     'd3': {
       exports: 'd3'
+    },
+    'googlemaps': {
+      exports: 'google'
     }
   }
 });
