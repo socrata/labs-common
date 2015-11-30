@@ -1,10 +1,20 @@
 ---
 ---
+
+{% if site.ga_tracking_code %}
+  // GA Setup
+  window.GoogleAnalyticsObject = '__ga__';
+  window.__ga__ = {
+    q: [['create', '{{ga_tracking_code}}', 'auto']],
+    l: Date.now()
+  };
+{% endif %}
+
 // Setup
 requirejs.config({
   baseUrl: '{{site.root}}/common/js/lib',
   paths: {
-    analytics: '//www.google-analytics.com/analytics',
+    ga: '//www.google-analytics.com/analytics',
     bootstrap: '//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min',
     d3: '//cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min',
     featherlight: '//cdn.rawgit.com/noelboss/featherlight/1.3.4/release/featherlight.min',
@@ -46,6 +56,9 @@ requirejs.config({
     },
     'googlemaps': {
       exports: 'google'
+    },
+    'ga' : {
+      exports: '__ga__'
     }
   }
 });
