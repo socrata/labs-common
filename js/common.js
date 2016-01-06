@@ -5,7 +5,7 @@
   // GA Setup
   window.GoogleAnalyticsObject = '__ga__';
   window.__ga__ = {
-    q: [['create', '{{ga_tracking_code}}', 'auto']],
+    q: [['create', '{{ site.ga_tracking_code }}', 'auto']],
     l: Date.now()
   };
 {% endif %}

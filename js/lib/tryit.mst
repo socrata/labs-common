@@ -1,7 +1,7 @@
 <div class="tryit-link">
   <i class="fa fa-fw fa-cog"><!-- This Space Left Blank --></i>
   <code>
-    <a class="exec has-tooltip" data-toggle="tooltip" title="" href="{{url}}" data-original-title="View the output of this query" data-container="body">{{display_url}}</a>
+    <a class="exec has-tooltip ga-track" data-toggle="tooltip" title="" href="{{url}}" data-original-title="View the output of this query" data-container="body" data-tracking-category="tryit" data-tracking-label="run-query" data-tracking-value="{{display_url}}">{{display_url}}</a>
   </code>
-  <a class="hurl-it has-tooltip" data-toggle="tooltip" title="" target="_blank" href="{{hurl_url}}" data-original-title="Edit this request on Hurl.it" data-hurl-full-url="{{url}}" data-placement="left" data-container="body"><i class="fa fa-pencil"><!-- This Space Left Blank --></i></a>
+  <a class="hurl-it has-tooltip ga-track" data-toggle="tooltip" title="" target="_blank" href="{{hurl_url}}" data-original-title="Edit this request on Hurl.it" data-hurl-full-url="{{url}}" data-placement="left" data-container="body" data-tracking-category="tryit" data-category-label="edit" data-tracking-value="{{display_url}}"><i class="fa fa-pencil"><!-- This Space Left Blank --></i></a>
 </div>
