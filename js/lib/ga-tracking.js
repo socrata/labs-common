@@ -3,7 +3,11 @@
 {% if site.ga_tracking_code %}
 require(['jquery', 'ga'], function($, ga) {
   if($.isFunction(ga)) {
-    ga('send', 'pageview');
+    // Make sure we send the whole URL, including the anchor and search
+    ga('send', 
+       'pageview',
+        location.pathname + location.search + location.hash
+    );
 
     // // Track click events
     $('body').on('click', '.ga-track', function() {
