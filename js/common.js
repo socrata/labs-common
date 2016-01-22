@@ -30,6 +30,7 @@ requirejs.config({
     'bootstrap': ['underscore', 'jquery'],
     'emphasis': ['jquery'],
     'jquery.forgiving': ['jquery'],
+    'jquery.redirect': ['jquery'],
     'jquery.cors' : ['jquery'],
     'readmore': ['jquery'],
     'humane': ['jquery'],
