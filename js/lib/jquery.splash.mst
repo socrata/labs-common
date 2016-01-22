@@ -1,0 +1,3 @@
+<div class="alert alert-{{level}}">
+  <p><em><i class="fa fa-{{icon}}"></i> {{title}}</em> {{&message}}</p>
+</div>

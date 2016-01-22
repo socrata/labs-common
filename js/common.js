@@ -31,6 +31,7 @@ requirejs.config({
     'emphasis': ['jquery'],
     'jquery.forgiving': ['jquery'],
     'jquery.redirect': ['jquery'],
+    'jquery.splash': ['jquery', 'mustache'],
     'jquery.cors' : ['jquery'],
     'readmore': ['jquery'],
     'humane': ['jquery'],
