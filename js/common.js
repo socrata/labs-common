@@ -36,7 +36,7 @@ requirejs.config({
     'readmore': ['jquery'],
     'humane': ['jquery'],
     'featherlight': ['jquery'],
-    '404': ['jquery'],
+    'jquery.404': ['jquery'],
     'highcharts' : {
       deps: ['jquery'],
       exports: 'Highcharts'
