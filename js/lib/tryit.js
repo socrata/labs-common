@@ -25,11 +25,18 @@ define(["jquery", "purl", "mustache"], function($, purl, Mustache) {
           });
           var hurl_url = 'http://hurl.it/?' + query;
 
+          var doc_url = null;
+          uid = target.match(/\w{4}-\w{4}/)
+          if(uid) {
+            doc_url = '/foundry/' + url.attr("host") + '/' + uid[0];
+          }
+
           // Render our Mustache template
           var content = Mustache.render(template, {
             url: target,
             display_url: display,
-            hurl_url : hurl_url
+            hurl_url : hurl_url,
+            doc_url: doc_url
           });
 
           // Set up the live link
