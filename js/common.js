@@ -24,7 +24,7 @@ requirejs.config({
     jquery: 'jquery.min',
     mustache: 'mustache.min',
     underscore: 'underscore-min',
-    zeroclipboard: 'ZeroClipboard.min'
+    github_activity: 'github-activity'
   },
   shim: {
     'bootstrap': ['underscore', 'jquery'],
@@ -50,10 +50,7 @@ requirejs.config({
     },
     'mustache': {
       exports: 'Mustache',
-      init: function() { return Mustache }
-    },
-    'zeroclipboard': {
-      exports: 'ZeroClipboard'
+      init: function() { return Mustache; }
     },
     'd3': {
       exports: 'd3'
@@ -63,6 +60,7 @@ requirejs.config({
     },
     'ga' : {
       exports: '__ga__'
-    }
+    },
+    'github_activity' : ['mustache']
   }
 });
