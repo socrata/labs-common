@@ -33,6 +33,7 @@ requirejs.config({
     'jquery.redirect': ['jquery'],
     'jquery.splash': ['jquery', 'mustache'],
     'jquery.cors' : ['jquery'],
+    'jquery.timeago' : ['jquery'],
     'readmore': ['jquery'],
     'humane': ['jquery'],
     'featherlight': ['jquery'],
