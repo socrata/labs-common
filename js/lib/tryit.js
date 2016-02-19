@@ -1,5 +1,5 @@
 // LiveDocs
-define(["jquery", "purl", "mustache"], function($, purl, Mustache) {
+define(["jquery", "purl", "mustache", "clipboard"], function($, purl, Mustache, Clipboard) {
   return {
     setup_livedocs: function(div) {
       $.when(
@@ -84,6 +84,34 @@ define(["jquery", "purl", "mustache"], function($, purl, Mustache) {
             });
           });
           $(element).replaceWith(content); 
+
+          // Set up the clipboard button
+          var clipboard = new Clipboard('.copy-it');
+          clipboard.on('success', function(e) {
+            console.log('Content copied to clipboard...');
+
+            // Change it to a check, but just for a bit...
+            var el = $(e.trigger).find('i');
+            var orig = el.attr('class');
+            el.attr('class', 'fa fa-check');
+            setTimeout(function() {
+              el.attr('class', orig); 
+            }, 2000);
+          })
+
+          clipboard.on('error', function(e) {
+            console.error('Error copying to clipboard!');
+            console.error('Action:', e.action);
+            console.error('Trigger:', e.trigger);
+
+            // Change it to a check, but just for a bit...
+            var el = $(e.trigger).find('i');
+            var orig = el.attr('class');
+            el.attr('class', 'fa fa-times');
+            setTimeout(function() {
+              el.attr('class', orig); 
+            }, 2000);
+          });
         });
       });
     }

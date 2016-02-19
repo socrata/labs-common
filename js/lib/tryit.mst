@@ -7,6 +7,7 @@
     {{#doc_url}}
       <a class="doc-it has-tooltip ga-track" data-toggle="tooltip" title="" target="_blank" href="{{doc_url}}" data-original-title="View API documentation for this dataset" data-placement="left" data-container="body" data-tracking-category="tryit" data-category-label="docs" data-tracking-value="{{docs_url}}"><i class="fa fa-book"><!-- This Space Left Blank --></i></a>
     {{/doc_url}}
+    <a class="copy-it has-tooltip ga-track" data-toggle="tooltip" title="" target="_blank" data-original-title="Copy this URL to the clipboard" data-placement="left" data-container="body" data-tracking-category="tryit" data-category-label="copy" data-tracking-value="{{display_url}}" data-clipboard-text="{{display_url}}"><i class="fa fa-clipboard"><!-- This Space Left Blank --></i></a>
     <a class="hurl-it has-tooltip ga-track" data-toggle="tooltip" title="" target="_blank" href="{{hurl_url}}" data-original-title="Edit this request on Hurl.it" data-hurl-full-url="{{url}}" data-placement="left" data-container="body" data-tracking-category="tryit" data-category-label="edit" data-tracking-value="{{display_url}}"><i class="fa fa-pencil"><!-- This Space Left Blank --></i></a>
   </div>
 </div>
