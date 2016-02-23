@@ -23,6 +23,7 @@ requirejs.config({
     googlemaps: '//maps.googleapis.com/maps/api/js?sensor=true',
     highcharts: '//code.highcharts.com/highcharts',
     highcharts_data: '//code.highcharts.com/modules/data',
+    hljs: '//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min',
     jquery: 'jquery.min',
     mustache: 'mustache.min',
     underscore: 'underscore-min'

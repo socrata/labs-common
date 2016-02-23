@@ -143,8 +143,9 @@ ul.well
 .tryit-link
   position: relative
   margin-bottom: 20px
-  padding: 0.8em
+  // padding: 0.8em
   border-radius: 4px
+  border: 1px solid #E2DBDF
   color: #c7254e
   background-color: #f9f2f4
   overflow: hidden
@@ -160,52 +161,59 @@ ul.well
     background-color: inherit
     a
       padding-left: 0.2em
-
-.results
-  position: relative
-  background-color: #f9f2f4
-  height: 400px
-  overflow-x: hidden
-  overflow-y: scroll
-  width: 100%
-  margin:
-    left: auto
-    right: auto
-    bottom: 20px
-  padding:
-    top: 10px
-    left: 10px
-    right: 10px
-    bottom: 10px
-  border: 1px solid #cecece
-  border-radius: 4px
-
-  code
-    background-color: transparent
-
-  .request, .response
-    border: none
-
-  .request
-    padding:
-      top: 3px
-      left: 3px
-    .verb
-      font-weight: bold
-      color: #008080
-
-  .remove
-    position: absolute
+  .tools
+    position: relative
     top: 0
     right: 0
-    text-decoration: none
-    color: #000
-    font-size: 0.9em
-    padding: 10px
-    background-color: whitesmoke
-    border-left: 1px solid #cecece
-    border-bottom: 1px solid #cecece
-    border-bottom-left-radius: 4px
+  .the-link
+    padding: 1.2em
+    padding-top: 2em
+    a.exec
+      font-size: 1.2em
+      color: #1b1b1b
+  .btn-default
+    background-color: #f9f2f4
+    border-top: none
+  .btn-last
+    border-right: none
+
+  .results
+    position: relative
+    height: 400px
+    overflow-x: hidden
+    overflow-y: scroll
+    width: 100%
+    margin:
+      left: auto
+      right: auto
+    padding:
+      top: 10px
+      left: 10px
+      right: 10px
+      bottom: 10px
+
+    code
+      background-color: transparent
+
+    .request, .response
+      border: none
+
+    .request
+      padding:
+        top: 3px
+        left: 3px
+      .verb
+        font-weight: bold
+        color: #008080
+
+    .remove
+      position: absolute
+      top: 0
+      right: 0
+      text-decoration: none
+      color: #000
+      font-size: 0.9em
+      padding: 10px
 
   pre
     background-color: transparent   /* Overrides bootstrap for try-it code response */

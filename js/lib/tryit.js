@@ -1,5 +1,5 @@
 // LiveDocs
-define(["jquery", "purl", "mustache", "clipboard"], function($, purl, Mustache, Clipboard) {
+define(["jquery", "purl", "mustache", "clipboard", "hljs"], function($, purl, Mustache, Clipboard, hljs) {
   return {
     setup_livedocs: function(div) {
       $.when(
@@ -44,33 +44,32 @@ define(["jquery", "purl", "mustache", "clipboard"], function($, purl, Mustache, 
           content.find('a.exec').click(function(event) {
             event.preventDefault();
 
-            var the_href = $(this).attr('href');
-            var the_link = $(this).closest('.tryit-link');
+            var tryit_block = $(this).parents('.tryit-link');
+            var the_link = tryit_block.find('.the-link');
+            var the_href = the_link.find('a.exec').attr('href');
 
             // Progress indication
             var the_gear = the_link.find("i.fa-cog");
             the_gear.addClass("fa-spin");
 
             $.ajax({
-              url: $(this).attr('href')
+              url: the_href
             }).done(function(data){
               the_gear.removeClass("fa-spin");
 
               // Create a results block after the link with the output
-              tryit_block = $('<div class="results"><a class="remove" href="#"><i class="fa fa-times"></i> close</a><code class="request"><span class="verb">GET</span><span class=".url"></span></code><pre class="response prettyprint"></pre></div>');
-              tryit_block.find('.response').text(JSON.stringify(data, undefined, 2));
-              tryit_block.find('.url').text(the_href);
+              var results_block = $('<div class="results"><a class="remove" href="#"><i class="fa fa-times"></i> close</a><code class="request"><span class="verb">GET</span><span class=".url"></span></code><pre class="response prettyprint lang-json"></pre></div>');
+              results_block.find('.response').text(JSON.stringify(data, undefined, 2));
+              results_block.find('.url').text(the_href);
+              results_block.find('.prettyprint').each(function(i, block) {
+                hljs.highlightBlock(block);
+              });
 
               // Hide any existing code blocks on the page
               $('.results').remove();
 
-              // We either stick it after the link directly, or the larger paragraph/list element if it has one
-              if(the_link.closest('p,ul,ol').size()) {
-                the_link.closest('p,ul,ol,.tryit-block').after(tryit_block);
-              } else {
-                the_link.after(tryit_block);
-                the_link.hide();
-              }
+              // Drop in our code!
+              the_link.after(results_block);
 
               // Set up the remove link
               $(".results .remove").click(function(event) {
