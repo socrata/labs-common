@@ -26,12 +26,15 @@ requirejs.config({
     hljs: '//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min',
     jquery: 'jquery.min',
     mustache: 'mustache.min',
+    proxy: 'proxy',
     underscore: 'underscore-min'
   },
   shim: {
     'bootstrap': ['underscore', 'jquery'],
+    'proxy' : ['js.cookie'],
     'emphasis': ['jquery'],
     'jquery.forgiving': ['jquery'],
+    'jquery.format': ['jquery'],
     'jquery.redirect': ['jquery'],
     'jquery.splash': ['jquery', 'mustache'],
     'jquery.cors' : ['jquery'],

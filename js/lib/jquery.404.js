@@ -1,4 +1,4 @@
-require(["jquery"], function($) {
+define(["jquery"], function($) {
   $.fn.extend({
     search_link: function() {
       $(this).each(function() {
