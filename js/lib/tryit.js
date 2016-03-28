@@ -127,7 +127,7 @@ define(
     elements.each(function(i, div) {
       var href = $(div).attr("href");
       var display_url = $(div).text();
-      var matches = href.match(/resource\/([^.]+)\.(\w+)/);
+      var matches = href.match(/resource\/([^.?]+)(?:\.(\w+))?/);
       var uid = matches[1];
       var format = matches[2] || 'json';
 
