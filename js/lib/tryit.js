@@ -121,6 +121,9 @@ define(
 
     // Update our displayed format
     $(this).parents('.tools').find('span.extension').text(new_ext);
+
+    // Run with our new output format
+    $(this).parents('.tools').find('.try-it').click(); 
   };
 
   var setup = function(elements) {
