@@ -25,6 +25,7 @@ requirejs.config({
     highcharts_data: '//code.highcharts.com/modules/data',
     hljs: '//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min',
     jquery: 'jquery.min',
+    micromarkdown: 'micromarkdown.min',
     mustache: 'mustache.min',
     proxy: 'proxy',
     underscore: 'underscore-min'
@@ -36,6 +37,7 @@ requirejs.config({
     'jquery.forgiving': ['jquery'],
     'jquery.format': ['jquery'],
     'jquery.redirect': ['jquery'],
+    'jquery.sanitize': ['jquery'],
     'jquery.splash': ['jquery', 'mustache'],
     'jquery.cors' : ['jquery'],
     'jquery.timeago' : ['jquery'],
@@ -53,6 +55,9 @@ requirejs.config({
     'underscore': {
       exports: '_'
     },
+    // 'showdown' : {
+    //   exports: 'showdown'
+    // },
     'mustache': {
       exports: 'Mustache',
       init: function() { return Mustache; }
