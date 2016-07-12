@@ -47,7 +47,7 @@ require(['jquery'], function($) {
     term = term.replace(/[^A-z0-9_-]+/g, ' ');
 
     // and go...
-    $.getJSON('{{ site.root }}/search.json', function(data,status) {
+    $.getJSON('{{ site.baseurl }}/search.json', function(data,status) {
       var s_words = $.trim(term).toLowerCase().split(" ");
       var results = {};
 
@@ -118,7 +118,7 @@ require(['jquery'], function($) {
       if(keys.length > 0) {
         var output = $(".search-container").append("<ul class=\"search-results\">");
         $.each(keys, function(idx,key) {
-          output.append("<li><a href=\"{{ site.root }}" + results[key]["u"] + "\">" + results[key]["t"] + "</a></li>");
+          output.append("<li><a href=\"{{ site.baseurl }}" + results[key]["u"] + "\">" + results[key]["t"] + "</a></li>");
         });
 
       } else {

@@ -2,7 +2,7 @@
 ---
 $(".related-pages").each(function(index, element){
   var related_div = element;
-  $.getJSON('{{ site.root }}/related.json', function(data, status) {
+  $.getJSON('{{ site.baseurl }}/related.json', function(data, status) {
     // See what we've got for this page
     path = location.pathname.replace(/\.html$/, '') + location.hash;
     related = data[path];
