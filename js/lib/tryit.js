@@ -1,7 +1,7 @@
 // LiveDocs
 define(
-    ["jquery", "underscore", "purl", "mustache", "clipboard", "hljs", "proxy", "jquery.format"],
-    function($, _, purl, Mustache, Clipboard, Highlight, Proxy, Format) {
+    ["jquery", "underscore", "purl", "mustache", "clipboard", "hljs", "proxy", "jquery.format", "jquery.message_height"],
+    function($, _, purl, Mustache, Clipboard, Highlight, Proxy, Format, MessageHeight) {
   var onclick = function(event) {
     event.preventDefault();
 
@@ -63,7 +63,13 @@ define(
         event.preventDefault();
         $('.results').remove();
         $('.tryit-link').show();
+
+        // Send our height message
+        $.message_height();
       });
+
+      // Send our height message
+      $.message_height();
     }).fail(function(data){
       the_gear.attr("class", "fa fa-warning");
       alert("Something went wrong with your query... Please try again later.");

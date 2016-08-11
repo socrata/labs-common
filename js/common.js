@@ -37,6 +37,8 @@ requirejs.config({
     'jquery.forgiving': ['jquery'],
     'jquery.format': ['jquery'],
     'jquery.redirect': ['jquery'],
+    'jquery.hash': ['jquery'],
+    'jquery.message_height': ['jquery'],
     'jquery.sanitize': ['jquery'],
     'jquery.splash': ['jquery', 'mustache'],
     'jquery.cors' : ['jquery'],
