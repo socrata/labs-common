@@ -22,6 +22,11 @@ require(["jquery"], function($) {
         console.log("All systems running normally");
         return;
 
+      case 200:
+        message = "Planned Maintenence";
+        level = "info";
+        break;
+
       case 300:
         message = "Degraded Performance";
         level = "warning";
@@ -41,6 +46,10 @@ require(["jquery"], function($) {
         message = "Security Event";
         level = "info";
         break;
+
+      default:
+        console.log("Unknown level: " + max_status);
+        return;
     }
 
     $("#socrata-status button")
