@@ -23,10 +23,22 @@ code
   .search
     padding-right: 1em
 
-  #socrata-status
-    padding-top: 8px
-    .popover
-      width: 300px
+#socrata-status
+  position: fixed
+  margin:
+    bottom: 0
+    top: 50px
+  width: 100%
+  z-index: 1000
+
+  &.alert-info,
+  &.alert-warning,
+  &.alert-danger
+    + .content
+      padding-top: 100px
+
+    @at-root .homepage & + .content
+      padding-top: 80px
 
 .sidebar-nav
   li > a
