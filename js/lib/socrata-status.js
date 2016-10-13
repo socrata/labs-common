@@ -52,12 +52,10 @@ require(["jquery"], function($) {
         return;
     }
 
-    $("#socrata-status button")
-      .addClass("btn-" + level)
-      .attr("title", message)
-      .attr("data-content", 'For more information see <a href="http://status.socrata.com">status.socrata.com</a>')
-      .text(message)
-      .popover();
+    $("#socrata-status")
+      .addClass("alert-" + level);
+    $("#socrata-status .message")
+      .html(message);
     $("#socrata-status")
       .show();
   }).fail(function(results) {
