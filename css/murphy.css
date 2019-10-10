@@ -39,6 +39,10 @@
 .nv { color: #003366 } /* Name.Variable */
 .ow { color: #000000; font-weight: bold } /* Operator.Word */
 .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mf { color: #6600EE; font-weight: bold } /* Literal.Number.Float */
+.highlight .mh { color: #005588; font-weight: bold } /* Literal.Number.Hex */
+.highlight .mi { color: #6666ff; font-weight: bold } /* Literal.Number.Integer */
+.highlight .mo { color: #4400EE; font-weight: bold } /* Literal.Number.Oct */
 .sb { background-color: #e0e0ff } /* Literal.String.Backtick */
 .sc { color: #8888FF } /* Literal.String.Char */
 .sd { color: #DD4422 } /* Literal.String.Doc */
