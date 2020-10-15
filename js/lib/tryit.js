@@ -129,14 +129,14 @@ define(
     $(this).parents('.tools').find('span.extension').text(new_ext);
 
     // Run with our new output format
-    $(this).parents('.tools').find('.try-it').click(); 
+    $(this).parents('.tools').find('.try-it').click();
   };
 
   var setup = function(elements) {
     elements.each(function(i, div) {
       var href = $(div).attr("href");
       var display_url = $(div).text();
-      var matches = href.match(/resource\/([^.?]+)(?:\.(\w+))?/);
+      var matches = href.match(/resource\/([^.?]+)(?:\.(\w+))?\//);
       var uid = matches[1];
       var format = matches[2] || 'json';
 
