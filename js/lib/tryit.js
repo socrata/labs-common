@@ -137,7 +137,7 @@ define(
       var href = $(div).attr("href");
       var display_url = $(div).text();
       var matches = href.match(/resource\/([^.?]+)(?:\.(\w+))?/);
-      var uid = matches[1].match(/\w*-\w*/)[0];
+      var uid = matches[1].match(/\w*-\w*/) ? matches[1].match(/\w*-\w*/)[0] : matches[1];
       var format = matches[2] || 'json';
 
       // Build up our Hurl link
