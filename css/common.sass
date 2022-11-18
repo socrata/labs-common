@@ -23,6 +23,111 @@ code
   .search
     padding-right: 1em
 
+#acquisition-notice
+  margin:
+    top: 50px
+    bottom: 0
+
+  background: #e8eaf6
+  color: rgba(0,0,0,.87)
+  font-family: Roboto, sans-serif
+  font-size: 16px
+
+  .forge-banner__container
+    display: flex
+    flex-direction: row
+    min-height: 48px
+    align-items: center
+    justify-content: center
+    padding: 0 24px 0 24px
+
+  .forge-banner__container-wrapper
+    flex: 1 1 auto
+    display: flex
+    flex-direction: row
+    justify-content: center
+    align-items: center
+    max-width: 950px
+
+  .forge-banner__container-wrapper-icon
+    font-size: 24px
+    display: inline-block
+    contain: content
+    box-sizing: content-box !important
+    color: #424242
+    margin-right: 16px
+
+    svg
+      fill: currentColor
+      stroke: currentColor
+      display: block
+      width: 1em
+      height: 1em
+      stroke-width: 0
+
+  .forge-banner__container-wrapper-subsection-text
+    padding: 14px 0 14px 0
+    margin-right: 24px
+
+  .forge-banner__container-wrapper-subsection
+    display: flex
+    justify-content: center
+    flex-direction: row
+    align-items: center
+
+  .forge-button
+    background-color: rgb(255, 255, 255)
+    --mdc-ripple-fg-size:78px
+    --mdc-ripple-fg-scale:1.87363
+    --mdc-ripple-fg-translate-start:85.1154px, -20.9855px
+    --mdc-ripple-fg-translate-end:26.6484px, -21px
+
+  .forge-button--outlined
+    height: 36px
+    border-radius: 4px
+    border-radius: 4px
+    padding: 0 15px 0 15px
+    border-width: 1px
+    white-space: nowrap
+
+  .forge-button--outlined:not(:disabled)
+    border-color: #3f51b5
+    color: #3f51b5
+    font-size: 14px
+    font-weight: 500
+    letter-spacing: 1.25px
+
+  .forge-button--outlined .forge-button__ripple
+    top: -1px
+    left: -1px
+    border: 1px solid rgba(0,0,0,0)
+
+  .forge-button--outlined.mdc-ripple-upgraded
+    --mdc-ripple-fg-opacity: 0.12
+
+  .forge-button.mdc-ripple-upgraded .forge-button__ripple::before
+    transform: scale(1)
+    top: calc(50% - 100%)
+    left: calc(50% - 100%)
+    width: 200%
+    height: 200%
+    transition: opacity 15ms linear,background-color 15ms linear
+    z-index: 1
+
+  .forge-button .forge-button__ripple::before, .forge-button .forge-button__ripple::after
+    position: absolute
+    border-radius: 50%
+    opacity: 0
+    pointer-events: none
+    content: ""
+
+  .forge-button--outlined .forge-button__ripple::before, .forge-button--outlined .forge-button__ripple::after
+    background-color: #3f51b5
+
+  .forge-button.mdc-ripple-upgraded .forge-button__ripple::after
+    width: 100%
+    height: 100%
+
 #socrata-status
   position: fixed
   margin:
