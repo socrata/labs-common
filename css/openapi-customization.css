@@ -4,4 +4,6 @@ openapi-explorer {
   --nav-hover-bg-color: #eee;
   --nav-hover-text-color: #333;
   --secondary-color: #333;
+
+  --font-mono: Menlo,Monaco,Consolas,"Courier New",monospace;
 }
