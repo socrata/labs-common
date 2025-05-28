@@ -136,9 +136,26 @@ define(
     elements.each(function(i, div) {
       var href = $(div).attr("href");
       var display_url = $(div).text();
-      var matches = href.match(/resource\/([^.?]+)(?:\.(\w+))?/);
-      var uid = matches[1].match(/\w*-\w*/) ? matches[1].match(/\w*-\w*/)[0] : matches[1];
-      var format = matches[2] || 'json';
+      var matches = (function(input) {
+        var matchesV2 = input.match(/resource\/([^.?]+)(?:\.(\w+))?/);
+        if (matchesV2) {
+          var uid = matchesV2[1].match(/\w*-\w*/) ? matchesV2[1].match(/\w*-\w*/)[0] : matchesV2[1];
+          var format = matchesV2[2] || 'json';
+
+          return { uid: uid, format: format };
+        }
+
+        var matchesV3 = input.match(/v3\/([^.?]+)\/(query|export)(?:\.(\w+))?/);
+        if (matchesV3) {
+          var uid = matchesV3[1].match(/\w*-\w*/) ? matchesV3[1].match(/\w*-\w*/)[0] : matchesV3[1];
+          var type = matchesV3[2];
+          var format = matchesV3[3] || 'json';
+
+          return { uid: uid, format: format };
+        }
+      })(href);
+      var uid = matches.href;
+      var format = matches.format;
 
       // Build up our Hurl link
       var url = purl(display_url);
