@@ -154,7 +154,7 @@ define(
           return { uid: uid, format: format };
         }
       })(href);
-      var uid = matches.href;
+      var uid = matches.uid;
       var format = matches.format;
 
       // Build up our Hurl link
