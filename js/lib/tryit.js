@@ -23,7 +23,7 @@ define(
         includeSystem: false,
       }),
       headers: {
-        'X-App-Token': 'oea67iooNR5qDi35J4f4IfjDd',
+        'X-App-Token': 'bHWsGtRFRP9x8Hl8lYivqM1hQ',
         'Content-Type': 'application/json'
       },
       dataType: 'text'
