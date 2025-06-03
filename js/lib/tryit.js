@@ -18,7 +18,7 @@ define(
         query: 'select *',
         page: {
           pageNumber: 1,
-          pageSize: 1000,
+          pageSize: 10,
         },
         includeSystem: false,
       }),
