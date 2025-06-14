@@ -20,7 +20,7 @@ define(
           pageNumber: 1,
           pageSize: 10,
         },
-        includeSystem: false,
+        includeSynthetic: false,
       }),
       headers: {
         'X-App-Token': 'bHWsGtRFRP9x8Hl8lYivqM1hQ',
