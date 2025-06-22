@@ -2,7 +2,7 @@
 define(
     ["jquery", "underscore", "purl", "mustache", "clipboard", "hljs", "proxy", "jquery.format", "jquery.message_height"],
     function($, _, purl, Mustache, Clipboard, Highlight, Proxy, Format, MessageHeight) {
-  var SODA_V3_REGEX = /v3\/views\/([^.?]+)\/(query|export)(?:\.(\w+))?/;
+  var SODA_V3_REGEX = /v3\/views\/([^.?\/]+)\/(query|export)(?:\.(\w+))?/;
   var onclick = function(event) {
     event.preventDefault();
 
