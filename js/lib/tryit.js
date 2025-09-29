@@ -202,6 +202,8 @@ define(
         });
         var default_format = _.findWhere(formats, { extension: format });
 
+        var copy_text = display_url;
+
         // Render our Mustache template
         var content = Mustache.render(template[0], {
           url: href,
@@ -209,7 +211,8 @@ define(
           hurl_url : hurl_url,
           doc_url: doc_url,
           formats: formats,
-          default_format: default_format
+          default_format: default_format,
+          copy_text: copy_text
         });
 
         // Set up the live link and format clicks
