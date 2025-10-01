@@ -20,6 +20,9 @@
       </ul>
     </div>
   </div>
+  <div class="http-post">
+    While this macro functions via HTTP GET, it is recommended that you use HTTP POST instead, as specified on <a href="/docs/queries/">this page</a>, in order to access the full range of request options and to allow for very long query texts.
+  </div>
 
   <div class="the-link">
     <i class="fa fa-fw fa-cog"><!-- This Space Left Blank --></i>
