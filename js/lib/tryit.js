@@ -12,20 +12,7 @@ define(
 
     var matchesV3 = the_href.match(SODA_V3_REGEX);
     var ajaxOptions = matchesV3 ? {
-      url: the_href,
-      method: 'POST',
-      data: JSON.stringify({
-        query: 'select *',
-        page: {
-          pageNumber: 1,
-          pageSize: 10,
-        },
-        includeSynthetic: false,
-      }),
-      headers: {
-        'X-App-Token': 'bHWsGtRFRP9x8Hl8lYivqM1hQ',
-        'Content-Type': 'application/json'
-      },
+      url: the_href.replace('$YOUR_APP_TOKEN', 'bHWsGtRFRP9x8Hl8lYivqM1hQ'),
       dataType: 'text'
     } : {
       url: the_href,
@@ -215,6 +202,8 @@ define(
         });
         var default_format = _.findWhere(formats, { extension: format });
 
+        var copy_text = display_url;
+
         // Render our Mustache template
         var content = Mustache.render(template[0], {
           url: href,
@@ -222,7 +211,8 @@ define(
           hurl_url : hurl_url,
           doc_url: doc_url,
           formats: formats,
-          default_format: default_format
+          default_format: default_format,
+          copy_text: copy_text
         });
 
         // Set up the live link and format clicks

@@ -5,7 +5,7 @@
 
       <a class="btn btn-default doc-it has-tooltip ga-track" data-toggle="tooltip" title="" target="_blank" href="{{doc_url}}" data-original-title="View API documentation for this dataset" data-placement="left" data-container="body" data-tracking-category="tryit" data-category-label="docs" data-tracking-value="{{docs_url}}"><i class="fa fa-book"><!-- This Space Left Blank --></i> docs</a>
 
-      <a class="btn btn-default copy-it has-tooltip ga-track" data-toggle="tooltip" title="" target="_blank" data-original-title="Copy this URL to the clipboard" data-placement="left" data-container="body" data-tracking-category="tryit" data-category-label="copy" data-tracking-value="{{display_url}}" data-clipboard-text="{{display_url}}"><i class="fa fa-clipboard"><!-- This Space Left Blank --></i> copy</a>
+      <a class="btn btn-default copy-it has-tooltip ga-track" data-toggle="tooltip" title="" target="_blank" data-original-title="Copy this URL to the clipboard" data-placement="left" data-container="body" data-tracking-category="tryit" data-category-label="copy" data-tracking-value="{{display_url}}" data-clipboard-text="{{copy_text}}"><i class="fa fa-clipboard"><!-- This Space Left Blank --></i> copy</a>
 
       <a class="btn btn-default btn-last format-it ga-track dropdown-toggle" data-toggle="dropdown" title="" target="_blank" href="#" data-original-title="" data-hurl-full-url="{{url}}" data-placement="left" data-container="body" data-tracking-category="tryit" data-category-label="formats" data-tracking-value="formats" aria-haspopup="true" aria-expanded="false">
         <i class="fa fa-code"><!-- This Space Left Blank --></i>
@@ -19,6 +19,9 @@
         {{/formats}}
       </ul>
     </div>
+  </div>
+  <div class="http-post">
+    While this macro functions via HTTP GET, it is recommended that you use HTTP POST instead, as specified on <a href="/docs/queries/">this page</a>, in order to access the full range of request options and to allow for very long query texts.
   </div>
 
   <div class="the-link">
